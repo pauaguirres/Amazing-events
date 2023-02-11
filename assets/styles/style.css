@@ -41,9 +41,22 @@ h1{
 
 .cards{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 .card{
-    margin: 70px 10px;
+    margin: 70px 15px;
+
+}
+.card-text{
+    font-size: small !important;
+    text-align: justify;
+}
+.card-title{
+    text-align: center;
+}
+.card-img-top{
+    height: 100px !important;
 }
 #nav1{
     background-color: white !important;
@@ -62,6 +75,13 @@ ul.ulfooter{
 }
 #cohort{
     display: flex !important;
-    justify-content: end !important;
+    justify-content: center !important;
     align-self: center !important;
+}
+.logofooter{
+    padding: 20px;
+}
+
+.form-check-inline {
+font-size:small !important;
 }

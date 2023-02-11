@@ -1,0 +1,67 @@
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FF8EAE;
+    height: 100px !important;
+    align-items: center !important;
+
+}
+
+h1{
+    text-align: center;
+}
+#anterior{
+    margin-left: 20px;
+    
+}
+#siguiente{
+    margin-right: 20px;
+}
+.btn-primary{
+    --bs-btn-bg: #ff8eae !important;
+    --bs-btn-border-color: #ff8eae !important;
+    --bs-btn-active-bg: #ff497d !important;
+    --bs-btn-active-border-color: #ff497d !important;
+    --bs-btn-hover-bg: #ff497d !important;
+    --bs-btn-hover-border-color:#ff497d !important;}
+
+    .btn-outline-success {
+        --bs-btn-color: #ff497d !important;
+        --bs-btn-border-color: #ff497d !important;
+        --bs-btn-hover-bg: #ff497d !important;
+        --bs-btn-hover-border-color: #ff497d !important;
+        --bs-btn-active-bg: #ff497d !important;
+        --bs-btn-active-border-color: #ff497d !important;
+        --bs-btn-disabled-color: #ff497d !important;
+        --bs-btn-disabled-border-color: #ff497d !important;
+    }
+
+.cards{
+    display: flex;
+}
+.card{
+    margin: 70px 10px;
+}
+#nav1{
+    background-color: white !important;
+}
+footer{
+    display: flex !important;
+    background-color: #FF8EAE;
+    height: 50px !important;
+}
+ul.ulfooter{
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    list-style: none !important;
+    align-self: center !important;
+}
+#cohort{
+    display: flex !important;
+    justify-content: end !important;
+    align-self: center !important;
+}

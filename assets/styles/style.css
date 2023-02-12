@@ -43,9 +43,11 @@ h1{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    align-items: center !important;
+    justify-content: center !important;
 }
 .card{
-    margin: 70px 15px;
+    margin: 70px 50px !important;
 
 }
 .card-text{
@@ -57,6 +59,7 @@ h1{
 }
 .card-img-top{
     height: 100px !important;
+
 }
 #nav1{
     background-color: white !important;
@@ -84,4 +87,37 @@ ul.ulfooter{
 
 .form-check-inline {
 font-size:small !important;
+}
+
+#form-contact{
+    font-size: small;
+    margin-left: 33%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 30px 5px 30px 5px;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+}
+.col{
+    border: 1px solid black  !important;
+    height: 60px;
+}
+.filatitulo{
+    
+    font-size: x-large;
+    padding: 1px;
+    font-weight: bolder;
+    background-color: rgb(230, 230, 230);
+}
+.filasubtitulo{
+    font-size: 14px !important;
+
+}
+#grilla{
+    margin: 10%;
+    border: 1px solid black;
 }

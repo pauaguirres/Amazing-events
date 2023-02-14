@@ -1,6 +1,7 @@
 *{
     font-family: 'Libre Franklin', sans-serif;
 }
+
 #header{
     display: flex;
     justify-content: space-between;
@@ -9,9 +10,23 @@
     align-items: center !important;
 
 }
+.nav-item{
+    margin: 1px 6px 1px 6px !important;
+    font-weight: bolder !important;
+    border: 1px solid #ff8eae !important;
+    border-radius: 5px !important;
+    box-shadow: 2px 2px rgb(230, 230, 230) !important;
+    padding: 0 6px 0 6px !important;
+
+}
 
 h1{
     text-align: center;
+    text-shadow: 2px 2px 2px white;
+    color: black !important;
+    font-weight: bolder;
+    letter-spacing: 5px;
+
 }
 #anterior{
     margin-left: 20px;
@@ -26,17 +41,17 @@ h1{
     --bs-btn-active-bg: #ff497d !important;
     --bs-btn-active-border-color: #ff497d !important;
     --bs-btn-hover-bg: #ff497d !important;
-    --bs-btn-hover-border-color:#ff497d !important;}
+    --bs-btn-hover-border-color:#ff497d !important;
+}
 
     .btn-outline-success {
-        --bs-btn-color: #ff497d !important;
-        --bs-btn-border-color: #ff497d !important;
-        --bs-btn-hover-bg: #ff497d !important;
-        --bs-btn-hover-border-color: #ff497d !important;
+        --bs-btn-color: white !important;
+        --bs-btn-bg: #ff8eae !important;
+        --bs-btn-border-color: #ff8eae !important;
         --bs-btn-active-bg: #ff497d !important;
         --bs-btn-active-border-color: #ff497d !important;
-        --bs-btn-disabled-color: #ff497d !important;
-        --bs-btn-disabled-border-color: #ff497d !important;
+        --bs-btn-hover-bg: #ff497d !important;
+        --bs-btn-hover-border-color:#ff497d !important;
     }
 
 .cards{
@@ -47,19 +62,20 @@ h1{
     justify-content: center !important;
 }
 .card{
-    margin: 70px 50px !important;
+    margin: 5% 2% !important;
 
 }
 .card-text{
     font-size: small !important;
     text-align: justify;
+    color: black !important;
 }
 .card-title{
     text-align: center;
+    color: black !important;
 }
 .card-img-top{
-    height: 100px !important;
-
+    height: 150px !important;
 }
 #nav1{
     background-color: white !important;
@@ -84,40 +100,49 @@ ul.ulfooter{
 .logofooter{
     padding: 20px;
 }
+.container-fluid{
+    align-items: center !important;
+    justify-content: center !important;
 
+}
+.formulariocategory{
+    background-color: rgb(255, 223, 181) !important;
+}
 .form-check-inline {
-font-size:small !important;
+font-size:medium !important;
+margin: 2% !important;
+}
+.form-check-input:checked {
+    background-color: gold !important;
+    border-color: gold !important;
 }
 
 #form-contact{
     font-size: small;
-    margin-left: 33%;
-    margin-top: 5%;
-    margin-bottom: 10%;
+    margin: 5% auto;
     padding: 30px 5px 30px 5px;
     display: flex;
+    border: 2px solid lightsalmon;
     border-radius: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(255, 223, 181) !important;
 }
-.col{
-    border: 1px solid black  !important;
-    height: 60px;
-}
-.filatitulo{
-    
-    font-size: x-large;
-    padding: 1px;
-    font-weight: bolder;
-    background-color: rgb(230, 230, 230);
-}
-.filasubtitulo{
-    font-size: 14px !important;
+
+table{
+    max-width: 75%;
+    margin: 5% auto;
+    border: 2px solid lightsalmon !important;
 
 }
-#grilla{
-    margin: 10%;
-    border: 1px solid black;
+
+th{
+    height: 70px !important;
+    text-align: center !important;
+    padding-top: 20px !important;
+    letter-spacing: 5px !important;
+    font-size: x-large !important;
+    background-color: rgb(255, 223, 181) !important;
+    text-shadow: 2px 2px 2px white !important;
 }

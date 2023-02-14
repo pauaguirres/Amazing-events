@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Events</title>
+    <title>Past Events</title>
     <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600&family=Libre+Franklin:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@600&family=Libre+Franklin:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
@@ -27,10 +27,10 @@
                     <a class="nav-link" href="./Home.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Upcoming Events</a>
+                    <a class="nav-link" href="./Upcoming_Events.html">Upcoming Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Past Events.html">Past Events</a>
+                    <a class="nav-link active" aria-current="page" href="#">Past Events</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./Contact.html">Contact</a>
@@ -44,48 +44,47 @@
     </nav>
 
     <header id="header">
-        <a class="col-1 btn btn-primary" href="./Home.html" role="button" id="anterior">
+        <a class="col-1 btn btn-primary" href="./Upcoming_Events.html" role="button" id="anterior">
             <img src="./assets/images/chevron-left.svg" alt="anterior">
         </a>
-        <h1 class="col-4">Upcoming Events</h1>
-        <a class="col-1 btn btn-primary" href="./Past Events.html" role="button" id="siguiente">
+        <h1 class="col-9">⭐ Past Events ⭐</h1>
+        <a class="col-1 btn btn-primary" href="./Contact.html" role="button" id="siguiente">
             <img src="./assets/images/chevron-right.svg" alt="siguiente">
         </a>
     </header>
     <main>
-    <div>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Category</label>
-            </div>
+        <div>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid formulariocategory">
                 <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Category</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                <label class="form-check-label" for="inlineCheckbox3">Category</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-                <label class="form-check-label" for="inlineCheckbox4">Category</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-                <label class="form-check-label" for="inlineCheckbox5">Category</label>
-            </div>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </div>
-
-    <div class="cards">
-            <div class="card" style="width: 12rem;">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Category</label>
+                </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Category</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Category</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">Category</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox5">Category</label>
+                </div>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="cards">
+            <div class="card" style="width: 14rem;">
                 <img src="./assets/images/Museum_Tour.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -94,7 +93,7 @@
                 </div>
             </div>
     
-            <div class="card" style="width: 12rem;">
+            <div class="card" style="width: 14rem;">
                 <img src="./assets/images/Music_Concert.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -103,7 +102,7 @@
                 </div>
             </div>
     
-            <div class="card" style="width: 12rem;">
+            <div class="card" style="width: 14rem;">
                 <img src="./assets/images/Cinema.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -112,7 +111,7 @@
                 </div>
             </div>
     
-            <div class="card" style="width: 12rem;">
+            <div class="card" style="width: 14rem;">
                 <img src="./assets/images/Marathon.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>

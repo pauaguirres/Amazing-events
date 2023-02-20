@@ -7,34 +7,34 @@
     display: flex;
     justify-content: space-between;
     background-color: #FF8EAE;
-    height: 100px !important;
+    height: 6.25rem !important;
     align-items: center !important;
 
 }
 .nav-item{
-    margin: 1px 6px 1px 6px !important;
+    margin: 0.0625rem 0.375rem 0.0625rem 0.375rem !important;
     font-weight: bolder !important;
-    border: 1px solid #ff8eae !important;
-    border-radius: 5px !important;
-    box-shadow: 2px 2px rgb(230, 230, 230) !important;
-    padding: 0 6px 0 6px !important;
+    border: 0.0625rem solid #ff8eae !important;
+    border-radius: 0.3125rem !important;
+    box-shadow: 0.125rem 0.125rem rgb(230, 230, 230) !important;
+    padding: 0 0.375rem 0 0.375rem !important;
 
 }
 
 h1{
     text-align: center;
-    text-shadow: 2px 2px 2px white;
+    text-shadow: 0.125rem 0.125rem 0.125rem white;
     color: black !important;
     font-weight: bolder;
-    letter-spacing: 5px;
+    letter-spacing: 0.3125rem;
 
 }
 #anterior{
-    margin-left: 20px;
+    margin-left: 1.25rem;
     
 }
 #siguiente{
-    margin-right: 20px;
+    margin-right: 1.25rem;
 }
 .btn-primary{
     --bs-btn-bg: #ff8eae !important;
@@ -76,7 +76,7 @@ h1{
     color: black !important;
 }
 .card-img-top{
-    height: 150px !important;
+    height: 9.375rem !important;
 }
 #nav1{
     background-color: white !important;
@@ -84,7 +84,7 @@ h1{
 footer{
     display: flex !important;
     background-color: #FF8EAE;
-    height: 50px !important;
+    height: 3.125rem !important;
 }
 ul.ulfooter{
     display: flex !important;
@@ -123,10 +123,10 @@ margin: 2% !important;
 #form-contact{
     font-size: small;
     margin: 2% auto;
-    padding: 30px 5px 30px 5px;
+    padding: 1.875rem 0.3125rem 1.875rem 0.3125rem;
     display: flex;
-    border: 2px solid lightsalmon;
-    border-radius: 20px;
+    border: 0.125rem solid lightsalmon;
+    border-radius: 1.25rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -136,33 +136,33 @@ margin: 2% !important;
 table{
     max-width: 75%;
     margin: 2% auto;
-    border: 3px solid lightsalmon !important;
+    border: 0.1875rem solid lightsalmon !important;
 
 
 }
 
 th{
-    height: 70px !important;
+    height: 4.375rem !important;
     text-align: center !important;
-    padding-top: 20px !important;
-    letter-spacing: 5px !important;
+    padding-top: 1.25rem !important;
+    letter-spacing: 0.3125rem !important;
     font-size: x-large !important;
     background-color: rgb(255, 223, 181) !important;
-    text-shadow: 2px 2px 2px white !important;
+    text-shadow: 0.125rem 0.125rem 0.125rem white !important;
 }
 
 .card-individual{
-    border: 3px solid lightsalmon !important;
+    border: 0.1875rem solid lightsalmon !important;
     margin: 5% auto !important;
-    border-radius: 10px !important;
+    border-radius: 0.625rem !important;
     background-color: lightsalmon;
 }
 
 .div-details-section{
-    padding: 20px !important;
+    padding: 1.25rem !important;
     background-color: rgb(255, 223, 181) !important;
-    border-radius: 10px !important;
-    margin: 10px;
+    border-radius: 0.625rem !important;
+    margin: 0.625rem;
 
 }
 .img-details{
@@ -170,18 +170,18 @@ width: 100%;
 height: 100%;
 }
 .card-text-individual{
-    margin: 10px !important;
+    margin: 0.625rem !important;
     line-height: 3;
     text-align: justify;
-    padding: 5px !important;
+    padding: 0.3125rem !important;
 }
 .card-title{
     text-align: center !important;
-    letter-spacing: 5px !important;
+    letter-spacing: 0.3125rem !important;
     font-size: x-large !important;
-    text-shadow: 2px 2px 2px white !important;
+    text-shadow: 0.125rem 0.125rem 0.125rem white !important;
 
 }
 .card-title-individual{
-    padding: 5px !important;
+    padding: 0.3125rem !important;
 }

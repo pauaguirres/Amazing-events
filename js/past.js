@@ -12,7 +12,7 @@ if (event.date < data.currentDate){
     <div class="card-body">
     <h5 class="card-title">${event.name}</h5>
         <p class="card-text">${event.description}</p>
-        <p>${event.price}</p>
+        <p>$ ${event.price}</p>
         <a href="./Details.html" class="btn btn-primary">Ver más...</a>
     </div>
     </div>

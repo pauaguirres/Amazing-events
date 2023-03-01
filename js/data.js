@@ -221,6 +221,7 @@ lista.innerHTML = listaCategories;  //???? cannot set propierties of null (setti
 
 
 
+
 // evento //
 
 // let itemsCategories = document.querySelectorAll('input .checkbox');

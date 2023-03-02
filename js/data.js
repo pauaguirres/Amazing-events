@@ -188,53 +188,18 @@ function crearCard(event){
 `
 };
 
-// funcion input //
+// funcion input:
 
-function crearInput(category){
-    return `<div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" value="${category}">
-    <label class="form-check-label" for="inlineCheckbox5">${category}</label>
-</div>
-`
-};
-
-
-// loop //
-
-let categories = [];
-let listaCategories= "";
-
-data.events.forEach(event => {
-
-    if (!categories.includes(event.category)){
-
-        categories.push (event.category)
-
-        listaCategories += crearInput(event.category);
-    }
-
-});
-console.log(listaCategories);
-
-let lista = document.querySelector('#navbargral');
-
-lista.innerHTML = listaCategories;
-
-
-
-
-// evento //
-
-let itemsCategories = document.querySelectorAll('input .checkbox');
-
-itemsCategories.forEach(listItem => listItem.onclick = () => {
-    let htmlResultados = "";
-    let category = listItem.innerText;
-    data.events.filter(event => event.category == category).forEach(event=> htmlResultados += crearCard(data.events));
-document.querySelector('div .cards').innerHTML = htmlResultados;
-});
-
-
+function crearInput(category) {
+    return `
+        <li class="flex-wrap">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="${category}">
+            <label class="form-check-label" for="inlineCheckbox1">${category}</label>
+        </div>
+        </li>
+`;
+}
 
 
 

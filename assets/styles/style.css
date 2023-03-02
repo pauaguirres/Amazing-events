@@ -1,6 +1,5 @@
 *{
     font-family: 'Libre Franklin', sans-serif;
-
 }
 
 #header{
@@ -9,8 +8,10 @@
     background-color: #FF8EAE;
     height: 6.25rem !important;
     align-items: center !important;
-
 }
+
+
+/* BARRA DE NAVEGACION */
 .nav-item{
     margin: 0.0625rem 0.375rem 0.0625rem 0.375rem !important;
     font-weight: bolder !important;
@@ -18,7 +19,6 @@
     border-radius: 0.3125rem !important;
     box-shadow: 0.125rem 0.125rem rgb(230, 230, 230) !important;
     padding: 0 0.375rem 0 0.375rem !important;
-
 }
 
 h1{
@@ -27,8 +27,8 @@ h1{
     color: black !important;
     font-weight: bolder;
     letter-spacing: 0.3125rem;
-
 }
+
 #anterior{
     margin-left: 1.25rem;
 }
@@ -54,69 +54,133 @@ h1{
         --bs-btn-hover-border-color:#ff497d !important;
     }
 
+    /* ESTILO DE LAS CARDS */
+
 .cards{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
+    max-width: 1200px !important; /* Ancho máximo del contenedor de las tarjetas */
+    margin: 0 auto !important; /* Centrar el contenedor en la página */
 }
 .card{
     margin: 2% !important;
+    width: calc(33.33% - 4%) !important; /* Ancho del 33.33% del contenedor, descontando los márgenes */
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+.card-body {
+    padding: 1rem !important;
 }
 .card-text{
     font-size: small !important;
     text-align: justify;
     color: black !important;
+    margin-bottom: 1rem !important;
 }
 .card-title{
     text-align: center;
     color: black !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
 }
 .card-img-top{
-    height: 9.375rem !important;
+    max-width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
 }
+
 #nav1{
     background-color: white !important;
 }
+/* //////////////////////////////////FOOTER ///////////////////////// */
 footer{
-    display: flex !important;
+    display: flex;
     background-color: #FF8EAE;
-    height: 3.125rem !important;
+    height: 3.125rem;
+    border-top: 1px solid #ccc;
+    margin-top: 2rem;
 }
+
 ul.ulfooter{
-    display: flex !important;
-    align-items: center !important;
-    flex-direction: row !important;
-    list-style: none !important;
-    align-self: center !important;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+li.li-footer {
+    margin-right: 1rem;
+}
+
 #cohort{
-    display: flex !important;
-    justify-content: center !important;
-    align-self: center !important;
-
-
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: #fff;
+    font-size: 0.875rem;
+    margin-top: 1rem;
 }
+
 .logofooter{
     padding: 20px;
 }
+
+/* //////////////////////////////////////////////////////// */
+
 .container-fluid{
     align-items: center !important;
     justify-content: center !important;
 
 }
-.formulariocategory{
-    background-color: rgb(255, 223, 181) !important;
-}
+
+/* /////////FORMULARIO CATEGORY ///////////*/
+
 .form-check-inline {
-font-size:medium !important;
-margin: 2% !important;
+    font-size: medium !important;
+    padding-right: 1rem !important;
 }
 .form-check-input:checked {
     background-color: gold !important;
     border-color: gold !important;
 }
+.form-control {
+    max-width: 400px !important;
+}
+ .form-control:focus {   /*Cambiar el color de fondo y borde del input cuando está activo (tiene el foco), para que se vea más claro que está seleccionado */
+    background-color: #fff !important;
+    border-color: gold !important;
+    box-shadow: none !important;
+}
+.formulariocategory {
+    display: flex !important;
+    align-items: center !important;
+    margin: auto !important;
+}
+.custom-list-unstyled li button {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    text-decoration: underline !important;
+    color: inherit !important;
+    cursor: pointer !important;
+}
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* ///////////////////////////////////// */
 
 #form-contact{
     font-size: small;
@@ -148,24 +212,33 @@ th{
     background-color: rgb(255, 223, 181) !important;
     text-shadow: 0.125rem 0.125rem 0.125rem white !important;
 }
-
-.card-individual{
-    border: 0.1875rem solid lightsalmon !important;
-    margin: 5% auto !important;
-    border-radius: 0.625rem !important;
-    background-color: lightsalmon;
+/* ////////// DETAILS ///////// */
+.main-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh !important;
 }
 
+.card-large {
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .card-large {
+    max-width: none;
+    }
+}
 .div-details-section{
     padding: 1.25rem !important;
     background-color: rgb(255, 223, 181) !important;
     border-radius: 0.625rem !important;
     margin: 0.625rem;
-
 }
 .img-details{
-width: 100%;
-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 .card-text-individual{
     margin: 0.625rem !important;
@@ -178,8 +251,29 @@ height: 100%;
     letter-spacing: 0.3125rem !important;
     font-size: x-large !important;
     text-shadow: 0.125rem 0.125rem 0.125rem white !important;
-
 }
 .card-title-individual{
     padding: 0.3125rem !important;
+}
+.card-individual{
+    border: 0.1875rem solid lightsalmon !important;
+    margin: 5% auto !important;
+    border-radius: 0.625rem !important;
+    background-color: lightsalmon;
+}
+
+/* //////////////////////////////////////// */
+
+.custom-list-unstyled {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.custom-list-unstyled li {
+    margin-right: 1rem !important;
+}
+.custom-list-unstyled li::marker {
+    display: none !important;
 }

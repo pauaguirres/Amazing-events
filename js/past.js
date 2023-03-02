@@ -22,3 +22,14 @@ console.log (cardP)
 
 }
 }
+
+// CHECKBOXES
+
+const categoriasUL = document.getElementById('categorias');
+const categorias = [...new Set(data.events.map(event => event.category))];
+categorias.forEach((categoria) => {
+    const inputHTML = crearInput(categoria);
+    categoriasUL.innerHTML += inputHTML;
+});
+
+

@@ -190,10 +190,10 @@ function crearCard(event){
 
 // funcion input //
 
-function crearInput(event){
+function crearInput(category){
     return `<div class="form-check form-check-inline">
-    <input class="form-check-input" type="checkbox" value="option5"> // id ????
-    <label class="form-check-label" for="inlineCheckbox5">${event.category}</label>
+    <input class="form-check-input" type="checkbox" value="${category}">
+    <label class="form-check-label" for="inlineCheckbox5">${category}</label>
 </div>
 `
 };
@@ -210,27 +210,29 @@ data.events.forEach(event => {
 
         categories.push (event.category)
 
-        listaCategories += crearInput(data.events);
+        listaCategories += crearInput(event.category);
     }
 
 });
 console.log(listaCategories);
 
-let lista = document.querySelector('nav .navbar');
-lista.innerHTML = listaCategories;  //???? cannot set propierties of null (setting 'innerHTML') ?????
+let lista = document.querySelector('#navbargral');
+
+lista.innerHTML = listaCategories;
 
 
 
 
 // evento //
 
-// let itemsCategories = document.querySelectorAll('input .checkbox');
-// itemsCategories.forEach(listItem => listItem.onclick = () => {
-//     let htmlResultados = "";
-//     let category = listItem.innerText;
-//     data.events.filter(event => event.category == category).forEach(event=> htmlResultados += crearCard(data.events));
-// document.querySelector('div .cards').innerHTML = htmlResultados;
-// });
+let itemsCategories = document.querySelectorAll('input .checkbox');
+
+itemsCategories.forEach(listItem => listItem.onclick = () => {
+    let htmlResultados = "";
+    let category = listItem.innerText;
+    data.events.filter(event => event.category == category).forEach(event=> htmlResultados += crearCard(data.events));
+document.querySelector('div .cards').innerHTML = htmlResultados;
+});
 
 
 

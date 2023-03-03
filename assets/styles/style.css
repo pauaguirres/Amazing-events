@@ -1,6 +1,12 @@
 *{
     font-family: 'Libre Franklin', sans-serif;
 }
+body{
+    min-height: 100vh !important;
+}
+main{
+    min-height: 90vh !important;
+}
 
 #header{
     display: flex;
@@ -31,9 +37,15 @@ h1{
 
 #anterior{
     margin-left: 1.25rem;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+    width: 3.125rem;
 }
 #siguiente{
     margin-right: 1.25rem;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+    width: 3.125rem;
 }
 .btn-primary{
     --bs-btn-bg: #ff8eae !important;
@@ -68,13 +80,16 @@ h1{
 .card{
     margin: 2% !important;
     width: calc(33.33% - 4%) !important; /* Ancho del 33.33% del contenedor, descontando los márgenes*/
-    max-height: 25rem !important;
+    max-height: 30rem !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
 }
 .card-body {
     padding: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
 }
 .card-text{
     font-size: small !important;
@@ -86,7 +101,7 @@ h1{
     text-align: center;
     color: black !important;
     font-size: 1.25rem !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
 }
 .card-img-top{
     max-width: 100% !important;
@@ -97,41 +112,85 @@ h1{
 #nav1{
     background-color: white !important;
 }
-/* //////////////////////////////////FOOTER ///////////////////////// */
-footer{
-    display: flex;
-    background-color: #FF8EAE;
-    height: 3.125rem;
-    border-top: 0.0625rem solid #ccc;
-    margin-top: 2rem;
-}
+/* ///////////////////////CARD DE DETAILS //////////////////////// */
 
-ul.ulfooter{
+.card-single {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 93.75rem !important;
+    margin: 0 auto !important;
+    height: 187.5rem!important;
+    box-sizing: border-box !important;
+    padding: 1.875rem !important;
+  }
+
+  .card-single .card-img-top {
+    max-width: 50% !important;
+    height: 50% !important;
+    object-fit: cover !important;
+    flex-shrink: 0 !important;
+  }
+
+  .card-single .card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: 100% !important;
+    padding: 2rem !important;
+    flex-grow: 1 !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .card-single .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .card-single .card-text {
+    font-size: 1.5rem;
+  }
+  #cardD {
+    width: 50%;
+  }
+  #mainD{
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
+  }
+
+/* //////////////////////////////////FOOTER ///////////////////////// */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#ff8eae;
+    color: black;
+    padding: 2rem;
+    margin-top: auto;
+  }
+  
+  .ulfooter {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-li.li-footer {
-    margin-right: 1rem;
-}
-
-#cohort{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    color: #fff;
-    font-size: 0.875rem;
-    margin-top: 1rem;
-}
-
-.logofooter{
-    padding: 1.25rem;
-}
-
+  }
+  
+  .li-footer {
+    margin-right: 2rem;
+  }
+  
+  .logofooter {
+    width: 2rem;
+  }
+  
+  #cohort {
+    font-size: 0.9rem;
+  }
 /* //////////////////////////////////////////////////////// */
 
 .container-fluid{
@@ -187,6 +246,11 @@ li.li-footer {
 }
 
 /* ///////////////////////////////////// */
+#mainC{
+    display: flex;
+justify-content: center;
+align-items: center;
+}
 
 #form-contact{
     font-size: small;
@@ -205,8 +269,6 @@ table{
     max-width: 75%;
     margin: 2% auto;
     border: 0.1875rem solid lightsalmon !important;
-
-
 }
 
 th{
@@ -218,57 +280,6 @@ th{
     background-color: rgb(255, 223, 181) !important;
     text-shadow: 0.125rem 0.125rem 0.125rem white !important;
 }
-/* ////////// DETAILS ///////// */
-.main-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 100vh !important;
-}
-
-.card-large {
-    width: 100%;
-    max-width: 30rem;
-    margin: 0 auto;
-}
-@media (min-width: 48rem) {
-    .card-large {
-    max-width: none;
-    }
-}
-.div-details-section{
-    padding: 1.25rem !important;
-    background-color: rgb(255, 223, 181) !important;
-    border-radius: 0.625rem !important;
-    margin: 0.625rem;
-}
-.img-details{
-    width: 100%;
-    height: 100%;
-}
-.card-text-individual{
-    margin: 0.625rem !important;
-    line-height: 3;
-    text-align: justify;
-    padding: 0.3125rem !important;
-}
-.card-title{
-    text-align: center !important;
-    letter-spacing: 0.3125rem !important;
-    font-size: x-large !important;
-    text-shadow: 0.125rem 0.125rem 0.125rem white !important;
-}
-.card-title-individual{
-    padding: 0.3125rem !important;
-}
-.card-individual{
-    border: 0.1875rem solid lightsalmon !important;
-    margin: 5% auto !important;
-    border-radius: 0.625rem !important;
-    background-color: lightsalmon;
-}
-
-/* //////////////////////////////////////// */
 
 .custom-list-unstyled {
     list-style: none !important;

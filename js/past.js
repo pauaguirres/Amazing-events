@@ -1,35 +1,47 @@
+// CARDS // 
+
 let eventContainer = document.getElementById('cardP');
-let cardP = "";
+let cardsHTML = "";
 
 for (let event of data.events){
     let currentDate = new Date(data.currentDate);
     let eventDate = new Date(event.date);
-if (event.date < data.currentDate){
-
-    cardP += `
-    <div class="card" style="width: 14rem;">
-    <img src="${event.image}" class="card-img-top" alt="...">
-    <div class="card-body">
-    <h5 class="card-title">${event.name}</h5>
-        <p class="card-text">${event.description}</p>
-        <p>$ ${event.price}</p>
-        <a href="./Details.html" class="btn btn-primary">Ver más...</a>
-    </div>
-    </div>
-`;
-console.log (cardP)
-    eventContainer.innerHTML = cardP;
-
-}
+    if (event.date < data.currentDate){
+        cardsHTML += crearCard(event);
+    }
 }
 
-// CHECKBOXES
+eventContainer.innerHTML = cardsHTML;
 
-const categoriasUL = document.getElementById('categorias');
-const categorias = [...new Set(data.events.map(event => event.category))];
+// CHECKBOX //
+
+let categoriasUL = document.getElementById('categorias');
+let categorias = [...new Set(data.events.map(event => event.category))];
 categorias.forEach((categoria) => {
-    const inputHTML = crearInput(categoria);
+    let inputHTML = crearInput(categoria);
     categoriasUL.innerHTML += inputHTML;
 });
 
+// EVENTO PARA FILTRAR CARDS CON CHECKBOX//
 
+let categoriasSeleccionadas = [];
+let checkboxes = document.querySelectorAll('.category-checkbox');
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', event => {
+        let categoriaSeleccionada = event.target.dataset.category;
+        if (event.target.checked) {
+            categoriasSeleccionadas.push(categoriaSeleccionada);
+        } else {
+            let index = categoriasSeleccionadas.indexOf(categoriaSeleccionada);
+            if (index > -1) {
+                categoriasSeleccionadas.splice(index, 1);
+            }
+        }
+
+        eventosFiltrados = data.events.filter(evento => categoriasSeleccionadas.includes(evento.category));
+        cards = eventosFiltrados.map(evento => crearCard(evento));
+        cardsHTML = cards.join('');
+
+        eventContainer.innerHTML = cardsHTML;
+    });
+});

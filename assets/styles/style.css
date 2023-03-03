@@ -60,15 +60,15 @@ h1{
     display: flex !important;
     flex-wrap: wrap !important;
     flex-direction: row !important;
-    align-items: center !important;
+    align-items: stretch !important;
     justify-content: center !important;
-    max-width: 1200px !important; /* Ancho máximo del contenedor de las tarjetas */
+    max-width: 75rem !important; /* Ancho máximo del contenedor de las tarjetas */
     margin: 0 auto !important; /* Centrar el contenedor en la página */
 }
 .card{
     margin: 2% !important;
-    width: calc(33.33% - 4%) !important; /* Ancho del 33.33% del contenedor, descontando los márgenes */
-    height: auto !important;
+    width: calc(33.33% - 4%) !important; /* Ancho del 33.33% del contenedor, descontando los márgenes*/
+    max-height: 25rem !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
@@ -90,7 +90,7 @@ h1{
 }
 .card-img-top{
     max-width: 100% !important;
-    height: 200px !important;
+    height: 12.5rem !important;
     object-fit: cover !important;
 }
 
@@ -102,7 +102,7 @@ footer{
     display: flex;
     background-color: #FF8EAE;
     height: 3.125rem;
-    border-top: 1px solid #ccc;
+    border-top: 0.0625rem solid #ccc;
     margin-top: 2rem;
 }
 
@@ -129,7 +129,7 @@ li.li-footer {
 }
 
 .logofooter{
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 /* //////////////////////////////////////////////////////// */
@@ -157,7 +157,7 @@ li.li-footer {
     border-color: gold !important;
 }
 .form-control {
-    max-width: 400px !important;
+    max-width: 25rem !important;
 }
  .form-control:focus {   /*Cambiar el color de fondo y borde del input cuando está activo (tiene el foco), para que se vea más claro que está seleccionado */
     background-color: #fff !important;
@@ -231,7 +231,7 @@ th{
     max-width: 30rem;
     margin: 0 auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
     .card-large {
     max-width: none;
     }

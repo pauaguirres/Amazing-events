@@ -172,6 +172,8 @@ let data = {
     ]
 }
 
+
+
 // funcion card //
 
 function crearCard(event){
@@ -188,18 +190,19 @@ function crearCard(event){
 `
 };
 
-// funcion input:
+// funcion input: //
 
 function crearInput(category) {
     return `
         <li class="flex-wrap">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="${category}">
-            <label class="form-check-label" for="inlineCheckbox1">${category}</label>
-        </div>
+            <div class="form-check">
+                <input class="form-check-input category-checkbox" type="checkbox" value="${category}" data-category="${category}">
+                <label class="form-check-label" for="inlineCheckbox1">${category}</label>
+            </div>
         </li>
-`;
+    `;
 }
+
 
 
 

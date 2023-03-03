@@ -1,32 +1,11 @@
-const eventContainer = document.getElementById('cardH');
-const cards = data.events.map((event) => `
-    <div class="card" style="width: 14rem;">
-        <img src="${event.image}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${event.name}</h5>
-            <p class="card-text">${event.description}</p>
-            <p>$ ${event.price}</p>
-            <a href="./Details.html" class="btn btn-primary">Ver más...</a>
-        </div>
-    </div>
-`);
-const cardHTML = cards.join('');
-eventContainer.innerHTML = cardHTML;
+// CARDS //
+
+document.getElementById('cardH').innerHTML = data.events.map(event => crearCard(event)).join('');
 
 
-function crearInput(category) {
-    return `
-        <li class="flex-wrap">
-            <div class="form-check">
-                <input class="form-check-input category-checkbox" type="checkbox" value="${category}" data-category="${category}">
-                <label class="form-check-label" for="inlineCheckbox1">${category}</label>
-            </div>
-        </li>
-    `;
-}
+// CHECKCBOX //
 
-// CHECKCBOX
-
+let eventContainer = document.getElementById('cardH');
 const categoriasUL = document.getElementById('categorias');
 const categorias = [...new Set(data.events.map(event => event.category))];
 categorias.forEach((categoria) => {
@@ -57,20 +36,8 @@ checkbox.addEventListener('change', filtrarEventos);
 });
 
 function actualizarEventos() {
-const cards = eventosMostrados.map((event) => `
-    <div class="card" style="width: 14rem;">
-    <img src="${event.image}" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">${event.name}</h5>
-        <p class="card-text">${event.description}</p>
-        <p>$ ${event.price}</p>
-        <a href="./Details.html" class="btn btn-primary">Ver más...</a>
-    </div>
-    </div>
-`);
-
-const cardHTML = cards.join('');
-eventContainer.innerHTML = cardHTML;
+    const cardHTML = eventosMostrados.map(event => crearCard(event)).join('');
+    eventContainer.innerHTML = cardHTML;
 }
 
 actualizarEventos();

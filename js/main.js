@@ -47,3 +47,22 @@ function actualizarEventos() {
 }
 
 actualizarEventos();
+
+
+
+// BUSQUEDA //
+
+let inputSearch = document.querySelector('input[type=search]');
+
+function filtrarEventosPorBusqueda(event) {
+    const searchValue = inputSearch.value.toLowerCase();
+    const eventosFiltrados = eventosOriginales.filter(event =>
+      event.name.toLowerCase().includes(searchValue) ||
+      event.description.toLowerCase().includes(searchValue) ||
+      event.category.toLowerCase().includes(searchValue)
+    );
+    eventosMostrados = eventosFiltrados;
+    actualizarEventos();
+  }
+  
+  inputSearch.addEventListener('keyup', filtrarEventosPorBusqueda);

@@ -6,29 +6,35 @@ document.getElementById('cardH').innerHTML = data.events.map(event => crearCard(
 // CHECKCBOX //
 
 let eventContainer = document.getElementById('cardH');
-const categoriasUL = document.getElementById('categorias');
-const categorias = [...new Set(data.events.map(event => event.category))];
+let categoriasUL = document.getElementById('categorias');
+let categorias = [...new Set(data.events.map(event => event.category))];
 categorias.forEach((categoria) => {
-    const inputHTML = crearInput(categoria);
+    let inputHTML = crearInput(categoria);
     categoriasUL.innerHTML += inputHTML;
 });
 
 // EVENTO //
 
-const categoryCheckboxes = document.querySelectorAll('.category-checkbox');
-const events = data.events;
+let categoryCheckboxes = document.querySelectorAll('.category-checkbox');
+let events = data.events;
+let eventosOriginales = events;
 let eventosMostrados = events;
+
 
 function filtrarEventos() {
     const categoriasSeleccionadas = Array.from(categoryCheckboxes)
     .filter((checkbox) => checkbox.checked)
     .map((checkbox) => checkbox.dataset.category);
 
-eventosMostrados = events.filter((event) =>
-    categoriasSeleccionadas.includes(event.category)
-);
+    if (categoriasSeleccionadas.length === 0) {
+        eventosMostrados = eventosOriginales;
+    } else {
+        eventosMostrados = eventosOriginales.filter((event) =>
+            categoriasSeleccionadas.includes(event.category)
+        );
+    }
 
-actualizarEventos();
+    actualizarEventos();
 }
 
 categoryCheckboxes.forEach((checkbox) => {
@@ -41,4 +47,3 @@ function actualizarEventos() {
 }
 
 actualizarEventos();
-

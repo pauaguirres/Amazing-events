@@ -1,4 +1,4 @@
-// CARDS // 
+// CARDS //
 let eventContainer = document.getElementById('cardU');
 let cards = '';
 
@@ -22,9 +22,8 @@ categorias.forEach((categoria) => {
 });
 
 // EVENTO PARA FILTRAR CARDS CON CHECKBOX //
-
-let categoriasSeleccionadas = [];
 let checkboxes = document.querySelectorAll('.category-checkbox');
+let categoriasSeleccionadas = [];
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', event => {
         let categoriaSeleccionada = event.target.dataset.category;
@@ -37,7 +36,7 @@ checkboxes.forEach(checkbox => {
             }
         }
 
-        let eventosFiltrados = data.events.filter(evento => categoriasSeleccionadas.includes(evento.category));
+        let eventosFiltrados = categoriasSeleccionadas.length > 0 ? data.events.filter(evento => categoriasSeleccionadas.includes(evento.category)) : data.events;
         let cards = eventosFiltrados.map(evento => crearCard(evento));
         let cardsHTML = cards.join('');
 

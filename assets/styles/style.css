@@ -245,7 +245,8 @@ footer {
     margin: 0 auto !important;
 }
 
-/* ///////////////////////////////////// */
+/* ///////////////////////////////////// *
+/* ////////////////////CONTACT////////////////////  */
 #mainC{
     display: flex;
 justify-content: center;
@@ -264,7 +265,7 @@ align-items: center;
     align-items: center;
     background-color: rgb(255, 223, 181) !important;
 }
-
+/* /////////////////////////////////////////// */
 table{
     max-width: 75%;
     margin: 2% auto;

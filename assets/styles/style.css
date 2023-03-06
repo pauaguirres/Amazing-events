@@ -74,8 +74,8 @@ h1{
     flex-direction: row !important;
     align-items: stretch !important;
     justify-content: center !important;
-    max-width: 75rem !important; /* Ancho máximo del contenedor de las tarjetas */
-    margin: 0 auto !important; /* Centrar el contenedor en la página */
+    max-width: 75rem !important;
+    margin: 0 auto !important;
 }
 .card{
     margin: 2% !important;
@@ -169,18 +169,21 @@ h1{
   /* Media queries para hacer la tarjeta responsive */
 @media screen and (max-width: 768px) {
     .card-single {
-    flex-direction: column;
-    height: auto;
+    flex-direction: column !important;
+    height: auto !important;
     }
 
     .card-single .card-img-top {
-    max-width: 100%;
-    height: auto;
+    max-width: 80% !important;
+    height: auto !important;
+    margin: 10px !important;
     }
 
     .card-single .card-body {
-    height: auto;
-    margin: 0;
+    max-width: 80% !important;
+    height: auto !important;
+    margin: 10px !important;
+
     }
 }
 /* //////////////////////////////////FOOTER ///////////////////////// */

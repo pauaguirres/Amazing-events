@@ -119,48 +119,70 @@ h1{
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 93.75rem !important;
+    width: 100% !important;
     margin: 0 auto !important;
-    height: 187.5rem!important;
+    height: 187.5rem !important;
     box-sizing: border-box !important;
     padding: 1.875rem !important;
-  }
+    --bs-card-border-color: lightsalmon !important;
+    background-color: rgba(255, 160, 122, 0.5) !important;
+}
 
-  .card-single .card-img-top {
+.card-single .card-img-top {
     max-width: 50% !important;
-    height: 50% !important;
+    height: 75% !important;
     object-fit: cover !important;
     flex-shrink: 0 !important;
-  }
+}
 
-  .card-single .card-body {
+.card-single .card-body {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    height: 100% !important;
+    height: 75% !important;
     padding: 2rem !important;
     flex-grow: 1 !important;
     box-sizing: border-box !important;
     text-align: center !important;
-  }
+    background-color: white !important;
+    margin: 2.1875rem !important;
+}
 
-  .card-single .card-title {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .card-single .card-text {
-    font-size: 1.5rem;
-  }
-  #cardD {
-    width: 50%;
-  }
-  #mainD{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.card-single .card-title {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
 
+.card-single .card-text {
+    font-size: 1rem !important;
+}
+
+#cardD {
+    width: 80% !important;
+}
+
+#mainD {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+  /* Media queries para hacer la tarjeta responsive */
+@media screen and (max-width: 768px) {
+    .card-single {
+    flex-direction: column;
+    height: auto;
+    }
+
+    .card-single .card-img-top {
+    max-width: 100%;
+    height: auto;
+    }
+
+    .card-single .card-body {
+    height: auto;
+    margin: 0;
+    }
+}
 /* //////////////////////////////////FOOTER ///////////////////////// */
 footer {
     display: flex;
@@ -171,26 +193,26 @@ footer {
     color: black;
     padding: 2rem;
     margin-top: auto;
-  }
-  
-  .ulfooter {
+}
+
+.ulfooter {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  
-  .li-footer {
+}
+
+.li-footer {
     margin-right: 2rem;
-  }
-  
-  .logofooter {
+}
+
+.logofooter {
     width: 2rem;
-  }
-  
-  #cohort {
+}
+
+#cohort {
     font-size: 0.9rem;
-  }
+}
 /* //////////////////////////////////////////////////////// */
 
 .container-fluid{

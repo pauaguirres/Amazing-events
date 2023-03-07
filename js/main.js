@@ -63,6 +63,10 @@ function filtrarEventosPorBusqueda(event) {
     );
     eventosMostrados = eventosFiltrados;
     actualizarEventos();
+    if (eventosMostrados.length === 0) {
+        alert('No se encontraron resultados, por favor intente modificar los filtros de busqueda');
+}
+
 }
 
 inputSearch.addEventListener('keyup', filtrarEventosPorBusqueda);

@@ -124,8 +124,8 @@ h1{
     height: 187.5rem !important;
     box-sizing: border-box !important;
     padding: 1.875rem !important;
-    --bs-card-border-color: lightsalmon !important;
-    background-color: rgba(255, 160, 122, 0.5) !important;
+    --bs-card-border-color: none !important;
+    background-image: url(../images/tumblr_pje5xycrmS1wvcbfqo1_1280.png);
 }
 
 .card-single .card-img-top {
@@ -156,7 +156,7 @@ h1{
 
 .card-single .card-text {
     font-size: 1rem !important;
-    text-align: flex-end !important;
+    text-align: center !important;
 }
 
 #cardD {
@@ -167,6 +167,8 @@ h1{
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+
+
 }
   /* Media queries para hacer la tarjeta responsive */
 @media screen and (max-width: 768px) {
@@ -186,7 +188,11 @@ h1{
     max-width: 80% !important;
     max-height: 50% !important;
     margin: 10px !important;
+    }
 
+    .card-single .card-title {
+        font-size: 1.2rem !important;
+        text-align: center !important;
     }
 }
 /* //////////////////////////////////FOOTER ///////////////////////// */
@@ -234,6 +240,10 @@ footer {
 }
 #navbargral{
     background-color: rgba(255, 160, 122, 0.5) !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+
 }
 .form-check-inline {
     font-size: medium !important;
@@ -291,7 +301,7 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 223, 181) !important;
+    background-image: url(../images/tumblr_pje5xycrmS1wvcbfqo1_1280.png);
 }
 /* /////////////////////////////////////////// */
 table{
@@ -306,7 +316,9 @@ th{
     padding-top: 1.25rem !important;
     letter-spacing: 0.3125rem !important;
     font-size: x-large !important;
-    background-color: rgb(255, 223, 181) !important;
+    background-image: url(../images/tumblr_pje5xycrmS1wvcbfqo1_1280.png);
+
+
     text-shadow: 0.125rem 0.125rem 0.125rem white !important;
 }
 

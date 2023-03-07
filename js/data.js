@@ -211,8 +211,9 @@ function crearCardDetails(event){
     <div class="card card-single">
         <img src="${event.image}" class="card-img-top" alt="imagen de ${event.name}">
         <div class="card-body">
-            <h5 class="card-title">${event.name}</h5>
+            <h5 class="card-title">✨${event.name}✨</h5>
             <p class="card-text">${event.description}</p>
+            <p>🌟</p>
         </div>
     </div>
     </div>`

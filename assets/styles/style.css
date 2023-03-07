@@ -151,10 +151,12 @@ h1{
 .card-single .card-title {
     font-size: 1.5rem !important;
     font-weight: bold !important;
+    text-align: center !important;
 }
 
 .card-single .card-text {
     font-size: 1rem !important;
+    text-align: flex-end !important;
 }
 
 #cardD {
@@ -175,13 +177,14 @@ h1{
 
     .card-single .card-img-top {
     max-width: 80% !important;
-    height: auto !important;
+    max-height: 50% !important;
     margin: 10px !important;
+    object-fit: cover !important;
     }
 
     .card-single .card-body {
     max-width: 80% !important;
-    height: auto !important;
+    max-height: 50% !important;
     margin: 10px !important;
 
     }
@@ -210,11 +213,11 @@ footer {
 }
 
 .logofooter {
-    width: 2rem;
+    width: 1.5rem;
 }
 
 #cohort {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 /* //////////////////////////////////////////////////////// */
 

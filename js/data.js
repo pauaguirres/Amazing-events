@@ -15,7 +15,7 @@ function crearCard(event){
     <h5 class="card-title">${event.name}</h5>
         <p class="card-text">${event.description}</p>
         <p>$ ${event.price}</p>
-        <a href="./Details.html?id=${event.id}" class="btn btn-primary">Ver más...</a>
+        <a href="./Details.html?id=${event._id}" class="btn btn-primary">Ver más...</a>
     </div>
     </div>
 `
@@ -34,7 +34,7 @@ function crearInput(category) {
     `;
 }
 
-// function Details //
+// funcion Details //
 
 function crearCardDetails(event){
     return `
@@ -53,49 +53,61 @@ function crearCardDetails(event){
 // FUNCIONES PARA LA TABLA //
 //ESTADISTICAS DE EVENTOS  //
 function crearTrEstadisticasEventos(data){
-    return `
-    <tr>
-    <td>${eventosConMayorAsistencia(data.events)}</td>
-    <td>${eventoConMenorAsistencia(data.events)}</td>
-    <td>${calcularEventoMayorCapacidad(data)}</td>
-    </tr>
-    `
+    let trs = '';
+    const eventosConMayorAsistencia = primerosCincoEventos(data.events, "assistance");
+    const eventosConMenorAsistencia = primerosCincoEventos(data.events, "assistance", true);
+    const eventosConMayorCapacidad = primerosCincoEventos(data.events, "capacity");
+    for(let i=0; i<5; i++) {
+        trs += `
+        <tr>
+        <td>${eventosConMayorAsistencia[i]}</td>
+        <td>${eventosConMenorAsistencia[i]}</td>
+        <td>${eventosConMayorCapacidad[i]}</td>
+        </tr>
+        `;
+    }
+    return trs;
+}
+
+function primerosCincoEventos(events, campo, ascendente=false) {
+    const orden = ascendente ? 1 : -1;
+    const eventosOrdenados = events.sort((a, b) => {
+        return orden * ((b[campo] / b.capacity) - (a[campo] / a.capacity));
+    });
+    const primerosCincoEventos = eventosOrdenados.slice(0, 5);
+    const nombresEventos = primerosCincoEventos.map(event => event.name);
+    return nombresEventos;
 }
 
 function eventosConMayorAsistencia(events) {
-    let porcentajeMayor = 0;
-    let eventosMayorAsistencia = [];
-    events.forEach(event => {
-    const porcentajeAsistencia = (event.assistance / event.capacity) * 100;
-    if (porcentajeAsistencia > porcentajeMayor) {
-        porcentajeMayor = porcentajeAsistencia;
-        eventosMayorAsistencia = [event.name];
-    } else if (porcentajeAsistencia === porcentajeMayor) {
-        eventosMayorAsistencia.push(event.name);
-    }
+    const eventosOrdenados = events.sort((a, b) => {
+        return (b.assistance / b.capacity) - (a.assistance / a.capacity);
     });
-    return eventosMayorAsistencia.join(', ');
+    const primerosCincoEventos = eventosOrdenados.slice(0, 5);
+    const nombresEventos = primerosCincoEventos.map(event => event.name);
+    return nombresEventos.join(', ');
 }
 
-function eventoConMenorAsistencia(events) {
-    const eventoMenorAsistencia = events.reduce((eventoAnterior, eventoActual) => {
-    const porcentajeAsistenciaActual = eventoActual.assistance / eventoActual.capacity * 100;
-    const porcentajeAsistenciaAnterior = eventoAnterior.assistance / eventoAnterior.capacity * 100;
-    return porcentajeAsistenciaActual < porcentajeAsistenciaAnterior ? eventoActual : eventoAnterior;
+function eventosConMenorAsistencia(events) {
+    const eventosOrdenados = events.sort((a, b) => {
+        return (a.assistance / a.capacity) - (b.assistance / b.capacity);
     });
-    return eventoMenorAsistencia.name;
+    const primerosCincoEventos = eventosOrdenados.slice(0, 5);
+    const nombresEventos = primerosCincoEventos.map(event => event.name);
+    return nombresEventos.join(', ');
 }
 
-function calcularEventoMayorCapacidad(data) {
-    let maximaCapacidad = 0;
-    let eventoMayorCapacidad = null;
-    for (const evento of data.events) {
-    if (evento.capacity > maximaCapacidad) {
-        maximaCapacidad = evento.capacity;
-        eventoMayorCapacidad = evento.name;
-}}
-    return eventoMayorCapacidad;
+function eventosConMayorCapacidad(events) {
+    const eventosOrdenados = events.sort((a, b) => {
+        return b.capacity - a.capacity;
+    });
+    const primerosCincoEventos = eventosOrdenados.slice(0, 5);
+    const nombresEventos = primerosCincoEventos.map(event => event.name);
+    return nombresEventos.join(', ');
 }
+
+
+
 
 
 // CATEGORIAS DE EVENTOS FUTUROS//
@@ -134,5 +146,4 @@ function getPastEventCategories(data) {
     const categories = pastEvents.map(event => event.category);
     return [...new Set(categories)];
 }
-
 

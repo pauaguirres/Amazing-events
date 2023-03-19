@@ -5,12 +5,13 @@ getData().then(data =>{
 
     const futureEventCategories = getFutureEventCategories(data);
     futureEventCategories.forEach(category => {
-    const quintaFila = table.querySelectorAll('tr')[4];
-    quintaFila.insertAdjacentHTML('afterend', crearTrEventosFuturos(category));
+    const septimaFila = table.querySelectorAll('tr')[8];
+    septimaFila.insertAdjacentHTML('afterend', crearTrEventosFuturos(category));
     });
 
     const lastTableRow = table.lastElementChild;
     getPastEventCategories(data).forEach(category => {
     lastTableRow.insertAdjacentHTML('afterend', crearTrEventosPasados(category));
     });
+
 })

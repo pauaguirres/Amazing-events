@@ -2,7 +2,7 @@ async function getData() {
     const response = await fetch('https://mindhub-xj03.onrender.com/api/amazing');
     const data = await response.json();
     return data;
-  }
+}
 getData();
 
 // funcion card //
@@ -50,20 +50,89 @@ function crearCardDetails(event){
     </div>`
 }
 
-// funcion Tabla //
-
-function crearTd (event){
+// FUNCIONES PARA LA TABLA //
+//ESTADISTICAS DE EVENTOS  //
+function crearTrEstadisticasEventos(data){
     return `
     <tr>
-        <td>
-            Categories
-        </td>
-        <td>
-        Revenues
-        </td>
-        <td>
-        Percentage of attendance
-        </td>
-        </tr>
+    <td>${eventosConMayorAsistencia(data.events)}</td>
+    <td>${eventoConMenorAsistencia(data.events)}</td>
+    <td>${calcularEventoMayorCapacidad(data)}</td>
+    </tr>
+    `
+}
+
+function eventosConMayorAsistencia(events) {
+    let porcentajeMayor = 0;
+    let eventosMayorAsistencia = [];
+    events.forEach(event => {
+    const porcentajeAsistencia = (event.assistance / event.capacity) * 100;
+    if (porcentajeAsistencia > porcentajeMayor) {
+        porcentajeMayor = porcentajeAsistencia;
+        eventosMayorAsistencia = [event.name];
+    } else if (porcentajeAsistencia === porcentajeMayor) {
+        eventosMayorAsistencia.push(event.name);
+    }
+    });
+    return eventosMayorAsistencia.join(', ');
+}
+
+function eventoConMenorAsistencia(events) {
+    const eventoMenorAsistencia = events.reduce((eventoAnterior, eventoActual) => {
+    const porcentajeAsistenciaActual = eventoActual.assistance / eventoActual.capacity * 100;
+    const porcentajeAsistenciaAnterior = eventoAnterior.assistance / eventoAnterior.capacity * 100;
+    return porcentajeAsistenciaActual < porcentajeAsistenciaAnterior ? eventoActual : eventoAnterior;
+    });
+    return eventoMenorAsistencia.name;
+}
+
+function calcularEventoMayorCapacidad(data) {
+    let maximaCapacidad = 0;
+    let eventoMayorCapacidad = null;
+    for (const evento of data.events) {
+    if (evento.capacity > maximaCapacidad) {
+        maximaCapacidad = evento.capacity;
+        eventoMayorCapacidad = evento.name;
+}}
+    return eventoMayorCapacidad;
+}
+
+
+// CATEGORIAS DE EVENTOS FUTUROS//
+function crearTrEventosFuturos(category){
+    return `
+    <tr>
+    <td>${category}</td>
+    <td>$</td>
+    <td>%</td>
+    </tr>
 `
 }
+
+//FUNCION QUE DEVUELVE LAS CATEGORIAS DE EVENTOS FUTUROS //
+function getFutureEventCategories(data) {
+    const currentDate = new Date(data.currentDate);
+    const futureEvents = data.events.filter(event => new Date(event.date) > currentDate);
+    const categories = futureEvents.map(event => event.category);
+    return [...new Set(categories)];
+}
+
+// CATEGORIAS DE EVENTOS PASADOS //
+function crearTrEventosPasados(category){
+    return `
+    <tr>
+    <td>${category}</td>
+    <td>$</td>
+    <td>%</td>
+    </tr>
+`
+}
+//FUNCION QUE DEVUELVE LAS CATEGORIAS DE EVENTOS PASADOS //
+function getPastEventCategories(data) {
+    const currentDate = new Date(data.currentDate);
+    const pastEvents = data.events.filter(event => new Date(event.date) < currentDate);
+    const categories = pastEvents.map(event => event.category);
+    return [...new Set(categories)];
+}
+
+

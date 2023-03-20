@@ -107,37 +107,22 @@ function eventosConMayorCapacidad(events) {
 }
 
 
-
-
-
-// CATEGORIAS DE EVENTOS FUTUROS//
-function crearTrEventosFuturos(category){
+// CATEGORIAS DE EVENTOS //
+function crearTrEventos(category, revenue, attendance){
     return `
     <tr>
-    <td>${category}</td>
-    <td>$</td>
-    <td>%</td>
+        <td>${category}</td>
+        <td>${revenue}</td>
+        <td>${attendance}</td>
     </tr>
 `
 }
-
 //FUNCION QUE DEVUELVE LAS CATEGORIAS DE EVENTOS FUTUROS //
 function getFutureEventCategories(data) {
     const currentDate = new Date(data.currentDate);
     const futureEvents = data.events.filter(event => new Date(event.date) > currentDate);
     const categories = futureEvents.map(event => event.category);
     return [...new Set(categories)];
-}
-
-// CATEGORIAS DE EVENTOS PASADOS //
-function crearTrEventosPasados(category){
-    return `
-    <tr>
-    <td>${category}</td>
-    <td>$</td>
-    <td>%</td>
-    </tr>
-`
 }
 //FUNCION QUE DEVUELVE LAS CATEGORIAS DE EVENTOS PASADOS //
 function getPastEventCategories(data) {
@@ -146,4 +131,43 @@ function getPastEventCategories(data) {
     const categories = pastEvents.map(event => event.category);
     return [...new Set(categories)];
 }
-
+//FUNCION PARA CALCULAR INGRESOS //
+function getRevenueByCategory(data) {
+    let eventsAmount = data.length;
+    let revenue = 0;
+    data.forEach(element => {
+        const estimate = parseInt(element.estimate||element.assistance);
+        const price = parseInt(element.price);
+        revenue += (estimate * price / eventsAmount);
+    });
+    if (revenue === 0) {
+        return "No events scheduled"
+    } else {
+        return "$" + Math.round(revenue);
+    }
+}
+//FUNCION PARA CALCULAR ASISTENCIA //
+function getAttendanceByCategory(data) {
+    let eventsAmount = data.length;
+    let attendance = 0;
+    data.forEach(element => {
+        attendance += parseInt(element.estimate||element.assistance);
+    });
+    if (attendance === 0) {
+        return "No events scheduled"
+    } else {
+        return Math.round((attendance / eventsAmount)/100) + "%";
+    }
+}
+// FUNCION PARA MOSTRAR EVENTOS //
+function mostrarEventos(data, getCategoriasEventos) {
+    const categories = getCategoriasEventos(data);
+    let tableRows = '';
+    categories.forEach(category => {
+        const categoryEvents = data.events.filter(event => event.category === category);
+        const revenue = getRevenueByCategory(categoryEvents);
+        const attendance = getAttendanceByCategory(categoryEvents);
+        tableRows += crearTrEventos(category, revenue, attendance);
+    });
+    return tableRows;
+}

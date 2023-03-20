@@ -4,14 +4,12 @@ getData().then(data =>{
     segundaFila.insertAdjacentHTML('afterend', crearTrEstadisticasEventos(data));
 
     const futureEventCategories = getFutureEventCategories(data);
-    futureEventCategories.forEach(category => {
+    const futureEventsTableRows = mostrarEventos(data, getFutureEventCategories);
     const septimaFila = table.querySelectorAll('tr')[8];
-    septimaFila.insertAdjacentHTML('afterend', crearTrEventosFuturos(category));
-    });
+    septimaFila.insertAdjacentHTML('afterend', futureEventsTableRows);
 
+    const pastEventCategories = getPastEventCategories(data);
+    const pastEventsTableRows = mostrarEventos(data, getPastEventCategories);
     const lastTableRow = table.lastElementChild;
-    getPastEventCategories(data).forEach(category => {
-    lastTableRow.insertAdjacentHTML('afterend', crearTrEventosPasados(category));
-    });
-
+    lastTableRow.insertAdjacentHTML('afterend', pastEventsTableRows);
 })

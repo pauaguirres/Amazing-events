@@ -66,9 +66,9 @@ h1{
         --bs-btn-hover-border-color:#ff497d !important;
     }
 
-    /* ESTILO DE LAS CARDS */
+ /* ESTILO DE LAS CARDS */
 
-.cards{
+ .cards{
     display: flex !important;
     flex-wrap: wrap !important;
     flex-direction: row !important;
@@ -109,6 +109,24 @@ h1{
     object-fit: cover !important;
 }
 
+#nav1{
+    background-color: white !important;
+}
+
+    @media (max-width: 768px) {
+        .card {
+            flex-basis: calc(50% - 4%) !important;
+            width: 100% !important;
+        }
+    }
+    @media (max-width: 576px) {
+        .card {
+            flex-basis: calc(100% - 4%) !important;
+        }
+        .card-img-top {
+            height: 10rem !important;
+        }
+    }
 #nav1{
     background-color: white !important;
 }
@@ -233,17 +251,19 @@ footer {
 
 }
 
-/* /////////FORMULARIO CATEGORY ///////////*/
+/* /////////CHECKBOXES ///////////*/
 
 .bg-body-tertiary {
     --bs-bg-opacity: 0 !important;
 }
 #navbargral{
-    background-color: rgba(255, 160, 122, 0.5) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
     align-items: center !important;
-    justify-content: center !important;
-
-
+    background-color: rgba(255, 160, 122, 0.5) !important;
+    justify-content: center !important; 
 }
 .form-check-inline {
     font-size: medium !important;
@@ -263,6 +283,7 @@ footer {
 }
 .formulariocategory {
     display: flex !important;
+    justify-content: flex-end !important;
     align-items: center !important;
     margin: auto !important;
 }
@@ -273,6 +294,10 @@ footer {
     text-decoration: underline !important;
     color: inherit !important;
     cursor: pointer !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
 }
 .navbar {
     display: flex !important;
@@ -281,6 +306,24 @@ footer {
     width: 90% !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
+}
+@media (max-width: 768px) {
+    #navbargral {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    overflow-x: auto !important;
+    }
+
+    .formulariocategory {
+    order: 2 !important;
+    margin-top: 10px !important;
+    }
+
+    .custom-list-unstyled {
+    order: 1 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    }
 }
 
 /* ///////////////////////////////////// *

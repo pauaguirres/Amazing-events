@@ -10,7 +10,7 @@ getData();
 function crearCard(event){
     return `
     <div class="card" style="width: 14rem;">
-    <img src="${event.image}" class="card-img-top" alt="imagen de ${event.name}">
+    <div class="contenedorimgcard"><img src="${event.image}" class="card-img-top" alt="imagen de ${event.name}"></div>
     <div class="card-body">
     <h5 class="card-title">${event.name}</h5>
         <p class="card-text">${event.description}</p>
@@ -27,12 +27,15 @@ function crearInput(category) {
     return `
         <li class="flex-wrap">
             <div class="form-check">
-                <input class="form-check-input category-checkbox" type="checkbox" value="${category}" data-category="${category}">
-                <label class="form-check-label" for="inlineCheckbox1">${category}</label>
+                <label class="form-check-label">
+                    <input class="form-check-input category-checkbox" type="checkbox" value="${category}" data-category="${category}">
+                    ${category}
+                </label>
             </div>
         </li>
     `;
 }
+
 
 // funcion Details //
 
@@ -44,6 +47,12 @@ function crearCardDetails(event){
         <div class="card-body">
             <h5 class="card-title">✨${event.name}✨</h5>
             <p class="card-text">${event.description}</p>
+            <p class="card-text">Date: ${event.date}</p>
+            <p class="card-text">Place: ${event.place}</p>
+            <p class="card-text">Price: $${event.price}</p>
+
+
+
             <p>🌟</p>
         </div>
     </div>

@@ -1,190 +1,21 @@
-let data = {
-    "currentDate": "2022-01-01",
-    "events": [
-    {
-        id: 1,
-        "image":"https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg",
-        "name":"Collectivities Party",
-        "date":"2021-12-12",
-        "description":"Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
-        "category":"Food Fair",
-        "place":"Room A",
-        "capacity":45000,
-        "assistance":42756,
-        "price":5
-    },
-    {
-        id: 2,
-        "image":"https://i.postimg.cc/ZmD3Xf57/Korean-style.jpg",
-        "name":"Korean style",
-        "date":"2022-08-12",
-        "description":"Enjoy the best Korean dishes, with international chefs and awesome events.",
-        "category":"Food Fair",
-        "place":"Room A",
-        "capacity":45000,
-        "assistance":42756,
-        "price":10
-    },
-    {
-        id: 3,
-        "image":"https://i.postimg.cc/GmHRkbNV/Jurassic-Park.jpg",
-        "name":"Jurassic Park",
-        "date":"2021-11-02",
-        "description":"Let's go meet the biggest dinosaurs in the paleontology museum.",
-        "category":"Museum",
-        "place":"Field",
-        "capacity":82000,
-        "assistance":65892,
-        "price":15
-    },
-    {
-        id: 4,
-        "image":"https://i.postimg.cc/c4C2zXm8/Parisian-Museum.jpg",
-        "name":"Parisian Museum",
-        "date":"2022-11-02",
-        "description":"A unique tour in the city of lights, get to know one of the most iconic places.",
-        "category":"Museum",
-        "place":"Paris",
-        "capacity":8200,
-        "estimate":8200,
-        "price":3500
-    },
-    {
-        id: 5,
-        "image":"https://i.postimg.cc/KYD0jMf2/comicon.jpg",
-        "name":"Comicon",
-        "date":"2021-02-12",
-        "description":"For comic lovers, all your favourite characters gathered in one place.",
-        "category":"Costume Party",
-        "place":"Room C",
-        "capacity":120000,
-        "assistance":110000,
-        "price":54
-    },
-    {
-        id: 6,
-        "image":"https://i.postimg.cc/RZ9fH4Pr/halloween.jpg",
-        "name":"Halloween Night",
-        "date":"2022-02-12",
-        "description":"Come with your scariest costume and win incredible prizes.",
-        "category":"Costume Party",
-        "place":"Room C",
-        "capacity":12000,
-        "estimate":9000,
-        "price":12
-    },
-    {
-        id: 7,
-        "image":"https://i.postimg.cc/PrMJ0ZMc/Metallica-in-concert.jpg",
-        "name":"Metallica in concert",
-        "date":"2022-01-22",
-        "description":"The only concert of the most emblematic band in the world.",
-        "category":"Music Concert",
-        "place":"Room A"
-        ,"capacity":138000,
-        "estimate":138000,
-        "price":150
-    },
-    {
-        id: 8,
-        "image":"https://i.postimg.cc/KvsSK8cj/Electronic-Fest.jpg",
-        "name":"Electronic Fest",
-        "date":"2021-01-22",
-        "description":"The best national and international DJs gathered in one place.",
-        "category":"Music Concert",
-        "place":"Room A",
-        "capacity":138000,
-        "assistance":110300,
-        "price":250
-        },
-    {
-        id: 9,
-        "image":"https://i.postimg.cc/fyLqZY9K/10-K-for-life.jpg",
-        "name":"10K for life",
-        "date":"2021-03-01",
-        "description":"Come and exercise, improve your health and lifestyle.",
-        "category":"Race",
-        "place":"Soccer field",
-        "capacity":30000,
-        "assistance":25698,
-        "price":3
-    },
-    {
-        id: 10,
-        "image":"https://i.postimg.cc/zv67r65z/15kny.jpg",
-        "name":"15K NY",
-        "date":"2022-03-01",
-        "description":"We'll be raising funds for hospitals and medical care in this unique event held in The Big Apple.",
-        "category":"Race",
-        "place":"New York",
-        "capacity":3000000,
-        "assistance":2569800,
-        "price":3
-        },
-    {
-        id: 11,
-        "image":"https://i.postimg.cc/Sst763n6/book1.jpg",
-        "name":"School's book fair",
-        "date":"2022-10-15",
-        "description":"Bring your unused school book and take the one you need.",
-        "category":"Book Exchange",
-        "place":"Room D1",
-        "capacity":150000,
-        "estimate":123286,
-        "price":1
-    },
-    {
-        id: 12,
-        "image":"https://i.postimg.cc/05FhxHVK/book4.jpg",
-        "name":"Just for your kitchen",
-        "date":"2021-11-09",
-        "description":"If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.",
-        "category":"Book Exchange",
-        "place":"Room D6",
-        "capacity":130000,
-        "assistance":90000,
-        "price":100
-    },
-    {
-        id: 13,
-        "image":"https://i.postimg.cc/vH52y81C/cinema4.jpg",
-        "name":"Batman",
-        "date":"2021-3-11",
-        "description":"Come see Batman fight crime in Gotham City.",
-        "category":"Cinema",
-        "place":"Room D1",
-        "capacity":11000,
-        "assistance":9300,
-        "price":225
-    },
-    {
-        id: 14,
-        "image":"https://i.postimg.cc/T3C92KTN/scale.jpg",
-        "name":"Avengers",
-        "date":"2022-10-15",
-        "description":"Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
-        "category":"Cinema",
-        "place":"Room D1",
-        "capacity":9000,
-        "estimate":9000,
-        "price":250
-    }
-    ]
+async function getData() {
+    const response = await fetch('https://mindhub-xj03.onrender.com/api/amazing');
+    const data = await response.json();
+    return data;
 }
-
-
+getData();
 
 // funcion card //
 
 function crearCard(event){
     return `
     <div class="card" style="width: 14rem;">
-    <img src="${event.image}" class="card-img-top" alt="imagen de ${event.name}">
+    <div class="contenedorimgcard"><img src="${event.image}" class="card-img-top" alt="imagen de ${event.name}"></div>
     <div class="card-body">
     <h5 class="card-title">${event.name}</h5>
         <p class="card-text">${event.description}</p>
         <p>$ ${event.price}</p>
-        <a href="./Details.html?id=${event.id}" class="btn btn-primary">Ver más...</a>
+        <a href="./Details.html?id=${event._id}" class="btn btn-primary">Ver más...</a>
     </div>
     </div>
 `
@@ -196,14 +27,17 @@ function crearInput(category) {
     return `
         <li class="flex-wrap">
             <div class="form-check">
-                <input class="form-check-input category-checkbox" type="checkbox" value="${category}" data-category="${category}">
-                <label class="form-check-label" for="inlineCheckbox1">${category}</label>
+                <label class="form-check-label">
+                    <input class="form-check-input category-checkbox" type="checkbox" value="${category}" data-category="${category}">
+                    ${category}
+                </label>
             </div>
         </li>
     `;
 }
 
-// function Details //
+
+// funcion Details //
 
 function crearCardDetails(event){
     return `
@@ -213,8 +47,136 @@ function crearCardDetails(event){
         <div class="card-body">
             <h5 class="card-title">✨${event.name}✨</h5>
             <p class="card-text">${event.description}</p>
+            <p class="card-text">Date: ${event.date}</p>
+            <p class="card-text">Place: ${event.place}</p>
+            <p class="card-text">Price: $${event.price}</p>
+
+
+
             <p>🌟</p>
         </div>
     </div>
     </div>`
+}
+
+// FUNCIONES PARA LA TABLA //
+//ESTADISTICAS DE EVENTOS  //
+function crearTrEstadisticasEventos(data){
+    let trs = '';
+    const eventosConMayorAsistencia = primerosCincoEventos(data.events, "assistance");
+    const eventosConMenorAsistencia = primerosCincoEventos(data.events, "assistance", true);
+    const eventosConMayorCapacidad = primerosCincoEventos(data.events, "capacity");
+    for(let i=0; i<5; i++) {
+        trs += `
+        <tr>
+        <td>${eventosConMayorAsistencia[i]}</td>
+        <td>${eventosConMenorAsistencia[i]}</td>
+        <td>${eventosConMayorCapacidad[i]}</td>
+        </tr>
+        `;
+    }
+    return trs;
+}
+
+function primerosCincoEventos(events, campo, ascendente=false) {
+    const orden = ascendente ? 1 : -1;
+    const eventosOrdenados = events.sort((a, b) => {
+        return orden * ((b[campo] / b.capacity) - (a[campo] / a.capacity));
+    });
+    const primerosCincoEventos = eventosOrdenados.slice(0, 5);
+    const nombresEventos = primerosCincoEventos.map(event => event.name);
+    return nombresEventos;
+}
+
+function eventosConMayorAsistencia(events) {
+    const eventosOrdenados = events.sort((a, b) => {
+        return (b.assistance / b.capacity) - (a.assistance / a.capacity);
+    });
+    const primerosCincoEventos = eventosOrdenados.slice(0, 5);
+    const nombresEventos = primerosCincoEventos.map(event => event.name);
+    return nombresEventos.join(', ');
+}
+
+function eventosConMenorAsistencia(events) {
+    const eventosOrdenados = events.sort((a, b) => {
+        return (a.assistance / a.capacity) - (b.assistance / b.capacity);
+    });
+    const primerosCincoEventos = eventosOrdenados.slice(0, 5);
+    const nombresEventos = primerosCincoEventos.map(event => event.name);
+    return nombresEventos.join(', ');
+}
+
+function eventosConMayorCapacidad(events) {
+    const eventosOrdenados = events.sort((a, b) => {
+        return b.capacity - a.capacity;
+    });
+    const primerosCincoEventos = eventosOrdenados.slice(0, 5);
+    const nombresEventos = primerosCincoEventos.map(event => event.name);
+    return nombresEventos.join(', ');
+}
+
+
+// CATEGORIAS DE EVENTOS //
+function crearTrEventos(category, revenue, attendance){
+    return `
+    <tr>
+        <td>${category}</td>
+        <td>${revenue}</td>
+        <td>${attendance}</td>
+    </tr>
+`
+}
+//FUNCION QUE DEVUELVE LAS CATEGORIAS DE EVENTOS FUTUROS //
+function getFutureEventCategories(data) {
+    const currentDate = new Date(data.currentDate);
+    const futureEvents = data.events.filter(event => new Date(event.date) > currentDate);
+    const categories = futureEvents.map(event => event.category);
+    return [...new Set(categories)];
+}
+//FUNCION QUE DEVUELVE LAS CATEGORIAS DE EVENTOS PASADOS //
+function getPastEventCategories(data) {
+    const currentDate = new Date(data.currentDate);
+    const pastEvents = data.events.filter(event => new Date(event.date) < currentDate);
+    const categories = pastEvents.map(event => event.category);
+    return [...new Set(categories)];
+}
+//FUNCION PARA CALCULAR INGRESOS //
+function getRevenueByCategory(data) {
+    let eventsAmount = data.length;
+    let revenue = 0;
+    data.forEach(element => {
+        const estimate = parseInt(element.estimate||element.assistance);
+        const price = parseInt(element.price);
+        revenue += (estimate * price / eventsAmount);
+    });
+    if (revenue === 0) {
+        return "No events scheduled"
+    } else {
+        return "$" + Math.round(revenue);
+    }
+}
+//FUNCION PARA CALCULAR ASISTENCIA //
+function getAttendanceByCategory(data) {
+    let eventsAmount = data.length;
+    let attendance = 0;
+    data.forEach(element => {
+        attendance += parseInt(element.estimate||element.assistance);
+    });
+    if (attendance === 0) {
+        return "No events scheduled"
+    } else {
+        return Math.round((attendance / eventsAmount)/100) + "%";
+    }
+}
+// FUNCION PARA MOSTRAR EVENTOS //
+function mostrarEventos(data, getCategoriasEventos) {
+    const categories = getCategoriasEventos(data);
+    let tableRows = '';
+    categories.forEach(category => {
+        const categoryEvents = data.events.filter(event => event.category === category);
+        const revenue = getRevenueByCategory(categoryEvents);
+        const attendance = getAttendanceByCategory(categoryEvents);
+        tableRows += crearTrEventos(category, revenue, attendance);
+    });
+    return tableRows;
 }

@@ -1,3 +1,4 @@
+getData().then(data =>{
 // CARDS //
 
 let eventContainer = document.getElementById('cardP');
@@ -71,3 +72,5 @@ function actualizarEventos() {
 
     eventContainer.innerHTML = cardsHTML;
 }
+}
+)
